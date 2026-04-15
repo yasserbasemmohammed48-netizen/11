@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To Learn - أكاديمية للتعليم</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="logo" onclick="go('home')">
+    <div class="logo-icon">📖</div>
+    <div class="logo-txt"><span>To </span><span class="g">Learn</span></div>
+  </div>
+  <div class="topbar-r">
+    <button class="icon-btn" onclick="toggleTheme()" id="themeBtn">🌙</button>
+    <button class="icon-btn" onclick="toggleNav()">☰</button>
+  </div>
+</div>
+
+<!-- ===== NAV MENU ===== -->
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+<div class="nav-menu" id="navMenu">
+  <div class="nav-item" onclick="go('home')">🏠 الرئيسية</div>
+  <div class="nav-item" onclick="go('about')">📖 عن الأكاديمية</div>
+  <div class="nav-item" onclick="go('pricing')">💰 الأسعار</div>
+  <div class="nav-div"></div>
+  <div class="nav-item" id="n-reg"   onclick="go('register')">✍️ سجل الآن</div>
+  <div class="nav-item" id="n-login" onclick="go('login')">🔐 تسجيل الدخول</div>
+  <div class="nav-item" id="n-dash"  style="display:none" onclick="go('dashboard')">📚 منصتي</div>
+  <div class="nav-item" id="n-admin" style="display:none" onclick="go('admin')">⚙️ لوحة التحكم</div>
+  <div class="nav-item" id="n-out"   style="display:none;color:#e74c3c" onclick="doLogout()">🚪 خروج</div>
+</div>
+
+<!-- ===== HOME ===== -->
+<div class="page active" id="page-home">
+  <div class="hero">
+    <div class="badge">🎓 أكاديمية للتعليم الأونلاين</div>
+    <h1><span>To </span><span style="color:var(--gold)">Learn</span></h1>
+    <div class="hero-sub">أكاديمية متخصصة في المناهج الدراسية</div>
+    <div class="flags">🇸🇦 🇰🇼 🇦🇪 🇪🇬</div>
+    <p style="color:var(--muted);font-size:14px">المناهج السعودية · الكويتية · الإماراتية · المصرية</p>
+    <div class="hero-btns">
+      <button class="btn-g" onclick="go('register')">✍️ سجل الآن مجاناً</button>
+      <button class="btn-o" onclick="go('about')">📖 تعرف علينا</button>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-t">لماذا <span style="color:var(--gold)">To Learn</span>؟</div>
+    <div class="sec-s">كل ما تحتاجه في مكان واحد</div>
+    <div class="grid-3">
+      <div class="card ct" style="text-align:center"><div style="font-size:34px;margin-bottom:12px">💻</div><h3 style="font-weight:700;margin-bottom:8px">تعليم أونلاين</h3><p style="font-size:14px;color:var(--muted);line-height:1.7">حصص مباشرة من بيتك بدون تنقل</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:34px;margin-bottom:12px">🏆</div><h3 style="font-weight:700;margin-bottom:8px">مدرسون متخصصون</h3><p style="font-size:14px;color:var(--muted);line-height:1.7">لكل منهج وكل مادة دراسية</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:34px;margin-bottom:12px">📊</div><h3 style="font-weight:700;margin-bottom:8px">متابعة مستمرة</h3><p style="font-size:14px;color:var(--muted);line-height:1.7">تقارير أسبوعية لولي الأمر</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:34px;margin-bottom:12px">🎯</div><h3 style="font-weight:700;margin-bottom:8px">4 مناهج</h3><p style="font-size:14px;color:var(--muted);line-height:1.7">سعودي وكويتي وإماراتي ومصري</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:34px;margin-bottom:12px">📝</div><h3 style="font-weight:700;margin-bottom:8px">كويزات تفاعلية</h3><p style="font-size:14px;color:var(--muted);line-height:1.7">اختبارات ومراجعات لكل وحدة</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:34px;margin-bottom:12px">🎁</div><h3 style="font-weight:700;margin-bottom:8px">حصة مجانية</h3><p style="font-size:14px;color:var(--muted);line-height:1.7">أول حصة تشخيصية مجاناً</p></div>
+    </div>
+    <div style="text-align:center;margin-top:50px">
+      <button class="btn-g" style="font-size:18px;padding:16px 44px" onclick="go('register')">🚀 سجل الآن</button>
+    </div>
+  </div>
+  <div class="footer">© To Learn جميع الحقوق محفوظة</div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div class="page" id="page-about">
+  <div class="sec">
+    <div class="sec-t">عن أكاديمية <span style="color:var(--gold)">To Learn</span></div>
+    <div class="sec-s">رسالتنا تعليم كل طالب بالطريقة المناسبة له</div>
+    <div class="card" style="margin-bottom:28px;padding:28px">
+      <p style="font-size:15px;line-height:2;color:var(--muted)">أكاديمية <strong style="color:var(--gold)">To Learn</strong> منصة تعليمية أونلاين متخصصة في تدريس المناهج السعودية والكويتية والإماراتية والمصرية. نقدم حصصاً فردية وجماعية عبر الإنترنت مع متابعة مستمرة من مدرسين متخصصين وتقارير دورية لأولياء الأمور.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card ct" style="text-align:center"><div style="font-size:36px;margin-bottom:10px">🇸🇦</div><h3 style="color:var(--gold);font-weight:700;margin-bottom:8px">المنهج السعودي</h3><p style="font-size:14px;color:var(--muted)">ابتدائي · متوسط · ثانوي<br>تحصيل دراسي · قدرات</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:36px;margin-bottom:10px">🇰🇼</div><h3 style="color:var(--gold);font-weight:700;margin-bottom:8px">المنهج الكويتي</h3><p style="font-size:14px;color:var(--muted)">ابتدائي · متوسط · ثانوي<br>جميع التخصصات</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:36px;margin-bottom:10px">🇦🇪</div><h3 style="color:var(--gold);font-weight:700;margin-bottom:8px">المنهج الإماراتي</h3><p style="font-size:14px;color:var(--muted)">ابتدائي · إعدادي · ثانوي<br>EmSAT تحضير</p></div>
+      <div class="card ct" style="text-align:center"><div style="font-size:36px;margin-bottom:10px">🇪🇬</div><h3 style="color:var(--gold);font-weight:700;margin-bottom:8px">المنهج المصري</h3><p style="font-size:14px;color:var(--muted)">ابتدائي (6 سنوات)<br>إعدادي (3 سنوات)</p></div>
+    </div>
+  </div>
+  <div class="footer">© To Learn جميع الحقوق محفوظة</div>
+</div>
+
+<!-- ===== PRICING ===== -->
+<div class="page" id="page-pricing">
+  <div class="sec">
+    <div class="sec-t">الأسعار <span style="color:var(--gold)">والباقات</span></div>
+    <div class="sec-s">أسعار تنافسية مع أعلى جودة تعليمية</div>
+    <div class="grid-4">
+      <div class="card">
+        <div style="font-size:32px;margin-bottom:10px">🇸🇦</div>
+        <h3 style="color:var(--gold);font-size:17px;font-weight:800;margin-bottom:16px">المنهج السعودي</h3>
+        <div class="pr-row"><span class="pr-l">ابتدائي (1-6)</span><span class="pr-v">80 ريال/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">متوسط (7-9)</span><span class="pr-v">110 ريال/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">ثانوي (10-12)</span><span class="pr-v">150 ريال/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">تحصيل/قدرات</span><span class="pr-v">180 ريال/ساعة</span></div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <div class="pr-row"><span class="pr-l">4 حصص/شهر</span><span class="pr-v">380 ريال</span></div>
+          <div class="pr-row"><span class="pr-l">8 حصص 🔥</span><span class="pr-v">720 ريال</span></div>
+          <div class="pr-row"><span class="pr-l">12 حصة</span><span class="pr-v">1000 ريال</span></div>
+          <div class="pr-row"><span class="pr-l">امتحانات 16 حصة</span><span class="pr-v">1300 ريال</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:32px;margin-bottom:10px">🇰🇼</div>
+        <h3 style="color:var(--gold);font-size:17px;font-weight:800;margin-bottom:16px">المنهج الكويتي</h3>
+        <div class="pr-row"><span class="pr-l">ابتدائي</span><span class="pr-v">6 د.ك/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">متوسط</span><span class="pr-v">10 د.ك/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">ثانوي</span><span class="pr-v">12 د.ك/ساعة</span></div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <div class="pr-row"><span class="pr-l">4 حصص</span><span class="pr-v">22 د.ك</span></div>
+          <div class="pr-row"><span class="pr-l">8 حصص 🔥</span><span class="pr-v">40 د.ك</span></div>
+          <div class="pr-row"><span class="pr-l">12 حصة</span><span class="pr-v">58 د.ك</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:32px;margin-bottom:10px">🇦🇪</div>
+        <h3 style="color:var(--gold);font-size:17px;font-weight:800;margin-bottom:16px">المنهج الإماراتي</h3>
+        <div class="pr-row"><span class="pr-l">ابتدائي</span><span class="pr-v">100 درهم/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">إعدادي</span><span class="pr-v">140 درهم/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">ثانوي</span><span class="pr-v">180 درهم/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">EmSAT</span><span class="pr-v">220 درهم/ساعة</span></div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <div class="pr-row"><span class="pr-l">4 حصص</span><span class="pr-v">480 درهم</span></div>
+          <div class="pr-row"><span class="pr-l">8 حصص 🔥</span><span class="pr-v">900 درهم</span></div>
+          <div class="pr-row"><span class="pr-l">EmSAT 20 حصة</span><span class="pr-v">3200 درهم</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:32px;margin-bottom:10px">🇪🇬</div>
+        <h3 style="color:var(--gold);font-size:17px;font-weight:800;margin-bottom:16px">المنهج المصري</h3>
+        <div class="pr-row"><span class="pr-l">ابتدائي (1-6)</span><span class="pr-v">50 جنيه/ساعة</span></div>
+        <div class="pr-row"><span class="pr-l">إعدادي (1-3)</span><span class="pr-v">80 جنيه/ساعة</span></div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <div class="pr-row"><span class="pr-l">4 حصص/شهر</span><span class="pr-v">180 جنيه</span></div>
+          <div class="pr-row"><span class="pr-l">8 حصص 🔥</span><span class="pr-v">340 جنيه</span></div>
+          <div class="pr-row"><span class="pr-l">12 حصة</span><span class="pr-v">480 جنيه</span></div>
+          <div class="pr-row"><span class="pr-l">مكثف امتحانات</span><span class="pr-v">600 جنيه</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:28px;text-align:center;padding:24px">
+      <p style="color:var(--muted);margin-bottom:16px">كل الباقات: متابعة أسبوعية + واجبات + مراجعة مجانية قبل الامتحان 🎁</p>
+      <button class="btn-g" onclick="go('register')">احجز حصتك التجريبية المجانية 🎯</button>
+    </div>
+  </div>
+  <div class="footer">© To Learn جميع الحقوق محفوظة</div>
+</div>
+
+<!-- ===== REGISTER ===== -->
+<div class="page" id="page-register">
+  <div class="auth-wrap">
+    <div class="auth-box">
+      <div class="auth-logo"><div style="font-size:40px">🎓</div><h2>إنشاء <span style="color:var(--gold)">حساب جديد</span></h2><p>انضم لأكاديمية To Learn</p></div>
+      <div class="steps"><div class="sd active" id="sd1"></div><div class="sd" id="sd2"></div><div class="sd" id="sd3"></div></div>
+      <div class="err" id="reg-err"></div>
+      <div class="sc active" id="rs1">
+        <div class="fg"><label>👤 اسم الطالب</label><input id="r-name" placeholder="الاسم كاملاً"></div>
+        <div class="fg"><label>📱 رقم الطالب</label><div class="ph-row"><select class="pc" id="r-code"><option value="+966">🇸🇦 +966</option><option value="+965">🇰🇼 +965</option><option value="+971">🇦🇪 +971</option><option value="+20">🇪🇬 +20</option></select><input id="r-phone" placeholder="رقم الهاتف" style="flex:1"></div></div>
+        <div class="fg"><label>👨‍👩‍👧 رقم ولي الأمر</label><div class="ph-row"><select class="pc" id="r-pcode"><option value="+966">🇸🇦 +966</option><option value="+965">🇰🇼 +965</option><option value="+971">🇦🇪 +971</option><option value="+20">🇪🇬 +20</option></select><input id="r-parent" placeholder="رقم الهاتف" style="flex:1"></div></div>
+        <div class="fg"><label>🌍 الدولة</label><select id="r-country" onchange="onCC()"><option value="">-- اختر الدولة --</option><option value="sa">🇸🇦 المملكة العربية السعودية</option><option value="kw">🇰🇼 الكويت</option><option value="ae">🇦🇪 الإمارات</option><option value="eg">🇪🇬 مصر</option></select></div>
+        <div class="fg" id="prov-g" style="display:none"><label>🏙️ المحافظة</label><select id="r-prov"></select></div>
+        <button class="btn-f" onclick="rn1()">التالي ←</button>
+      </div>
+      <div class="sc" id="rs2">
+        <div class="fg"><label>📚 السنة الدراسية</label><select id="r-grade" onchange="onGC()"><option value="">-- اختر --</option></select></div>
+        <div id="subs-w" style="display:none"><label>📖 اختر المواد</label><div class="sg" id="subs-g"></div></div>
+        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn-back" onclick="rb1()">→ رجوع</button><button class="btn-f" style="flex:1;margin-top:0" onclick="rn2()">التالي ←</button></div>
+      </div>
+      <div class="sc" id="rs3">
+        <div class="fg"><label>🔐 كلمة المرور</label><input type="password" id="r-pass" placeholder="6 أحرف على الأقل"></div>
+        <div class="fg"><label>🔐 تأكيد كلمة المرور</label><input type="password" id="r-pass2" placeholder="أعد الإدخال"></div>
+        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn-back" onclick="rb2()">→ رجوع</button><button class="btn-f" style="flex:1;margin-top:0" onclick="doReg()">✅ إنشاء الحساب</button></div>
+      </div>
+      <div class="al">لديك حساب؟ <a onclick="go('login')">سجل دخول</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LOGIN ===== -->
+<div class="page" id="page-login">
+  <div class="auth-wrap">
+    <div class="auth-box">
+      <div class="auth-logo"><div style="font-size:40px">🔐</div><h2>تسجيل <span style="color:var(--gold)">الدخول</span></h2><p>مرحباً بك مجدداً</p></div>
+      <div class="err" id="login-err"></div>
+      <div class="fg"><label>📱 رقم الهاتف</label><div class="ph-row"><select class="pc" id="l-code"><option value="+966">🇸🇦 +966</option><option value="+965">🇰🇼 +965</option><option value="+971">🇦🇪 +971</option><option value="+20">🇪🇬 +20</option></select><input id="l-phone" placeholder="رقم الهاتف" style="flex:1"></div></div>
+      <div class="fg"><label>🔐 كلمة المرور</label><input type="password" id="l-pass" placeholder="أدخل كلمة المرور"></div>
+      <button class="btn-f" onclick="doLogin()">🚀 تسجيل الدخول</button>
+      <div class="al">ليس لديك حساب؟ <a onclick="go('register')">سجل الآن</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DASHBOARD ===== -->
+<div class="page" id="page-dashboard">
+  <div class="dash-w">
+    <div class="wc">
+      <div>
+        <h2 style="font-size:22px;font-weight:800">مرحباً، <span style="color:var(--gold)" id="d-name">الطالب</span> 👋</h2>
+        <p style="color:var(--muted);font-size:13px;margin-top:4px" id="d-info"></p>
+        <p style="color:var(--muted);font-size:13px" id="d-subs"></p>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:32px" id="d-flag">🎓</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px" id="d-grade"></div>
+      </div>
+    </div>
+    <div class="fc">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <div style="font-size:28px">🎁</div>
+        <div><h3 style="font-size:17px;font-weight:800;color:var(--gold)">احجز حصتك التجريبية المجانية</h3><p style="font-size:13px;color:var(--muted);margin-top:3px">حصة تشخيصية مجانية 30 دقيقة</p></div>
+      </div>
+      <div class="ig">
+        <div class="ib"><div class="lb">👤 الاسم</div><div class="vl" id="fi-name">—</div></div>
+        <div class="ib"><div class="lb">📱 الهاتف</div><div class="vl" id="fi-phone">—</div></div>
+        <div class="ib"><div class="lb">📚 المواد</div><div class="vl" id="fi-subs">—</div></div>
+        <div class="ib"><div class="lb">⏱️ المدة</div><div class="vl">30 دقيقة مجاناً</div></div>
+      </div>
+      <div id="fl-btn"></div>
+    </div>
+    <h3 style="font-size:20px;font-weight:800;margin-bottom:14px">الكورسات <span style="color:var(--gold)">التعليمية</span></h3>
+    <div class="ctabs">
+      <div class="ctab active" data-k="sa" onclick="swTab('sa')">🇸🇦 السعودي</div>
+      <div class="ctab" data-k="ae" onclick="swTab('ae')">🇦🇪 الإماراتي</div>
+      <div class="ctab" data-k="kw" onclick="swTab('kw')">🇰🇼 الكويتي</div>
+      <div class="ctab" data-k="eg" onclick="swTab('eg')">🇪🇬 المصري</div>
+    </div>
+    <div class="cg" id="cg"></div>
+    <h3 style="font-size:20px;font-weight:800;margin-bottom:14px">📚 كورساتك <span style="color:var(--gold)">المشترك فيها</span></h3>
+    <div class="cg" id="mc"></div>
+  </div>
+  <div class="footer">© To Learn جميع الحقوق محفوظة</div>
+</div>
+
+<!-- ===== ADMIN ===== -->
+<div class="page" id="page-admin">
+  <div class="adm-w">
+    <h2 style="font-size:26px;font-weight:900;margin-bottom:20px">⚙️ لوحة التحكم - <span style="color:var(--gold)">To Learn</span></h2>
+    <div class="sg2">
+      <div class="stc"><div class="stn" id="st-s">0</div><div class="stl">👨‍🎓 طالب</div></div>
+      <div class="stc"><div class="stn" id="st-l">0</div><div class="stl">📎 محاضرة</div></div>
+      <div class="stc"><div class="stn">4</div><div class="stl">🌍 مناهج</div></div>
+      <div class="stc"><div class="stn" id="st-q">0</div><div class="stl">📝 كويز</div></div>
+    </div>
+    <div class="adm-s">
+      <h4>👨‍🎓 إدارة الطلاب والاشتراكات</h4>
+      <div style="overflow-x:auto">
+        <table><thead><tr><th>الاسم</th><th>الهاتف</th><th>الدولة</th><th>المرحلة</th><th>المواد</th><th>إدارة</th></tr></thead>
+        <tbody id="st-body"><tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px">لا يوجد طلاب بعد</td></tr></tbody></table>
+      </div>
+      <div class="sp" id="st-panel">
+        <div style="font-weight:700;margin-bottom:12px;color:var(--gold)" id="p-title">⚙️ إدارة الطالب</div>
+        <div class="two" id="p-info" style="margin-bottom:14px"></div>
+        <div style="margin-bottom:14px;background:var(--card2);border-radius:10px;padding:10px 12px;font-size:13px"><div style="color:var(--muted);font-size:11px;margin-bottom:2px">📖 المواد المختارة</div><div style="font-weight:700" id="p-subs">—</div></div>
+        <div style="margin-bottom:14px">
+          <label style="color:var(--gold);display:block;font-size:13px;margin-bottom:8px">🔗 رابط الحصة التجريبية (Zoom / Telegram)</label>
+          <input id="fl-inp" placeholder="https://zoom.us/j/... أو t.me/..." oninput="saveFL()">
+          <div id="fl-test" style="margin-top:6px;font-size:12px;display:none"><a id="fl-a" href="#" target="_blank" style="color:var(--gold)">🔗 اختبر الرابط</a></div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px">انقر على المادة لتفعيلها أو إلغائها</div>
+        <div id="p-tog" style="display:flex;flex-wrap:wrap"></div>
+      </div>
+    </div>
+    <div class="adm-s">
+      <h4>📎 إضافة رابط محاضرة</h4>
+      <div class="two" style="margin-bottom:12px">
+        <div><label>العنوان</label><input id="lec-t" placeholder="مثال: الجبر - درس 1"></div>
+        <div><label>المادة</label><select id="lec-s"><option>رياضيات</option><option>علوم</option><option>لغة عربية</option><option>لغة إنجليزية</option><option>تاريخ</option><option>جغرافيا</option></select></div>
+      </div>
+      <div class="two" style="margin-bottom:12px">
+        <div><label>المنهج</label><select id="lec-c" onchange="updLG()"><option value="sa">🇸🇦 سعودي</option><option value="kw">🇰🇼 كويتي</option><option value="ae">🇦🇪 إماراتي</option><option value="eg">🇪🇬 مصري</option></select></div>
+        <div><label>السنة الدراسية</label><select id="lec-g"></select></div>
+      </div>
+      <div style="margin-bottom:14px"><label>🔗 رابط Meet / Zoom / Telegram</label><input id="lec-l" placeholder="https://..."></div>
+      <button class="btn-g" onclick="saveLec()">➕ إضافة</button>
+      <span class="ok" id="lok">✅ تم!</span>
+      <div id="lec-list" style="margin-top:14px"></div>
+    </div>
+    <div class="adm-s">
+      <h4>📝 إضافة كويز</h4>
+      <div class="two" style="margin-bottom:14px">
+        <div><label>عنوان الكويز</label><input id="qz-t" placeholder="كويز الوحدة الأولى"></div>
+        <div><label>المادة</label><select id="qz-s"><option>رياضيات</option><option>علوم</option><option>لغة عربية</option><option>لغة إنجليزية</option></select></div>
+      </div>
+      <div id="qz-qs"></div>
+      <button class="btn-o" style="font-size:14px;padding:8px 18px;margin-bottom:12px" onclick="addQ()">➕ إضافة سؤال</button><br>
+      <button class="btn-g" onclick="saveQz()">💾 حفظ الكويز</button>
+      <span class="ok" id="qok">✅ تم!</span>
+    </div>
+  </div>
+  <div class="footer">© To Learn جميع الحقوق محفوظة</div>
+</div>
+
+<!-- ===== QUIZ MODAL ===== -->
+<div class="modal-bg" id="qmodal">
+  <div class="modal-box">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h3 style="color:var(--gold);font-weight:800" id="qm-title">الكويز</h3>
+      <button onclick="closeQM()" style="background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer">✕</button>
+    </div>
+    <div id="qm-body"></div>
+  </div>
+</div>
+
+<!-- ===== FLOAT BUTTONS ===== -->
+<div class="float-b">
+  <a class="fb" style="background:#25D366" id="wa-b" href="https://wa.me/201101631329" target="_blank">💬</a>
+  <a class="fb" style="background:#EA4335;font-size:18px" href="mailto:tlearn919@gmail.com">✉️</a>
+  <a class="fb" style="background:#1877F2;font-size:18px" href="https://www.facebook.com/share/17tt3w8eEd/" target="_blank">f</a>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
